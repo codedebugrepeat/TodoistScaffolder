@@ -23,7 +23,6 @@ namespace TodoistScaffolder
     {
         private const string todoistUrl = "https://todoist.com/API";
 
-        private const string projectsFilePath = "projects.json";
         private const string configFilePath = "config.json";
 
         public async Task Scaffold()
@@ -33,7 +32,7 @@ namespace TodoistScaffolder
             if (config.DeleteProjectsAtStart)
                 await DeleteProjects(config);
 
-            var projectsCommands = File.ReadAllText(projectsFilePath);
+            var projectsCommands = File.ReadAllText(config.PathToProjects);
 
             var commandsWithUids = GetCommandsWithUids(projectsCommands);
 
@@ -97,6 +96,7 @@ namespace TodoistScaffolder
     {
         public string SyncToken { get; set; }
         public string ApiVersion { get; set; }
+        public string PathToProjects { get; set; }
         public bool DeleteProjectsAtStart { get; set; }
     }
 

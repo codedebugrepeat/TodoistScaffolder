@@ -1,5 +1,6 @@
 {
-  "SyncToken": "cf006d1e6564e405065b67947f430ab1e4a0571c",
+  "SyncToken": "enter-sync-token-here",
   "ApiVersion": "7.4",
-  "DeleteProjectsAtStart":  false
+  "PathToProjects": "projects.json",
+  "DeleteProjectsAtStart": false
 }
